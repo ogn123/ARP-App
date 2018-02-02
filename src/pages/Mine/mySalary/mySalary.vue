@@ -1,7 +1,7 @@
 <template>
 	<div class="my-pay">
 		<m-header title="我的薪酬">
-			<i class="mintui mintui-back ml20" slot="left" @click="goBack"></i>
+			<i class="mintui mintui-back ml20" slot="left"></i>
 		</m-header>
 		<m-contain class="myaccount">
 			<!--搜索框部分-->

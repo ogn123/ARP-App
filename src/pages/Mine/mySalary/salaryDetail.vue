@@ -181,10 +181,15 @@
 						height: 0.28rem;
 					}
 				}
+				i{
+					font-size: 0.32rem;
+					transition: all .3s ease;
+					color: #c5c5c5;
+				}
 			}
 			.s-content{
 				height: 3.84rem;
-				transition: all 1s ease;
+				transition: all .3s ease;
 				overflow: hidden;
 				.mint-cell{
 					font-size: 0.26rem;
@@ -201,6 +206,7 @@
 				height: 0;
 			}
 		}
+
 		.trans{
 			transform: rotate(90deg);
 		}

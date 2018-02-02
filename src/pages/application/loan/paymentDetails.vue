@@ -3,7 +3,7 @@
 		<header class="p-header">
 			<div class="top">
 				<div class="m-header-button is-left">
-					<i class="mintui mintui-back ml20"></i>
+					<i class="mintui mintui-back ml20" @click="goBack()"></i>
 				</div>
 				<h1 class="m-header-title">借款详情</h1>
 			</div>
@@ -310,7 +310,10 @@
             },
             combine() {
                 this.last = !this.last;
-			}
+			},
+            goBack(){
+                this.$router.go(-1); //返回上一级
+            }
 		}
 	}
 </script>

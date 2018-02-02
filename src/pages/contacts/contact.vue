@@ -9,7 +9,6 @@
 			</div>
 			<!--最近 联系人-->
 			<ul class="txl_content">
-				<!--<li style="border-bottom: 1px solid #cbcbcb">-->
 				<li>
 					<p class="recent_contacts pd22 xg_title">
 						最近联系人
@@ -44,7 +43,6 @@
 						</li>
 					</ul>
 				</li>
-
 			</ul>
 		</m-contain>
 		<m-footer></m-footer>
@@ -249,12 +247,15 @@
   }
   .xg_title i{
   	color: #d1d1d1;
+    font-size: 0.32rem;
   }
   .xg_top{
   	margin-top: 0.2rem;
   }
   .xg_angle i{
   	color: #d1d1d1;
+	  font-weight: 900;
+	  font-size: 0.32rem;
   }
   .f26{
   	font-size: .26rem;

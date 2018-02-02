@@ -1,17 +1,19 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
-
-// 首页
 import Index from '../pages/Index/Index'
+
+
+
 //消息
 import Message from '../pages/messages/message'
+
+
 //应用
 import Application from '../pages/application/application'
+
 // 借款
 //我的借款
 import myLoan from '../pages/application/loan/myLoan'
-
 //我的借款
 import paymentDetails from '../pages/application/loan/paymentDetails'
 //我信息查询
@@ -43,7 +45,8 @@ import mySalary from '../pages/Mine/mySalary/mySalary'
 //工资详情
 import salaryDetail from '../pages/Mine/mySalary/salaryDetail'
 
-
+// 左右滑动
+import abc from '../pages/myProject/abc'
 // 我的项目
 import myProject from '../pages/Mine/myProject/myProject'
 // 项目详情
@@ -143,6 +146,13 @@ export default new Router({
       name: 'historyRecord',
       component:historyRecord,
       meta: {keepAlive: false, menuId: ''}
+    },
+    {
+        path: '/message/abc',
+        name: 'abc',
+        component:abc,
+        id:'abc',
+        meta: {keepAlive: false, menuId: ''}
     },
     // 我的项目
     {

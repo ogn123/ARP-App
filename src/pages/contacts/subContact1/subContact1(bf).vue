@@ -27,7 +27,65 @@
 								<p class="s-name-cont"><span>{{item1.ym}}</span>&nbsp;<span>{{item1.xm}}</span>&nbsp;<span>{{item1.zw}}</span></p>
 							</div>
 						</mt-cell>
+						<!--<mt-cell>-->
+							<!--<div class="num_logo">-->
+								<!--<img src="../../../../static/images/user1.png">-->
+							<!--</div>-->
+							<!--<div class="num_name">-->
+								<!--<p class="s-name-title">安杰</p>-->
+								<!--<p class="s-name-cont"><span>医学院</span>&nbsp;<span>临床系</span>&nbsp;<span>院长</span></p>-->
+							<!--</div>-->
+						<!--</mt-cell>-->
+						<!--<mt-cell>-->
+							<!--<div class="num_logo">-->
+								<!--<img src="../../../../static/images/user1.png">-->
+							<!--</div>-->
+							<!--<div class="num_name">-->
+								<!--<p class="s-name-title">安杰</p>-->
+								<!--<p class="s-name-cont"><span>医学院</span>&nbsp;<span>临床系</span>&nbsp;<span>院长</span></p>-->
+							<!--</div>-->
+						<!--</mt-cell>-->
 					</mt-index-section>
+					<!--<mt-index-section index="B">-->
+						<!--<mt-cell>-->
+							<!--<div class="num_logo">-->
+								<!--<img src="../../../../static/images/user1.png">-->
+							<!--</div>-->
+							<!--<div class="num_name">-->
+								<!--<p class="s-name-title">安杰</p>-->
+								<!--<p class="s-name-cont"><span>医学院</span>&nbsp;<span>临床系</span>&nbsp;<span>院长</span></p>-->
+							<!--</div>-->
+						<!--</mt-cell>-->
+						<!--<mt-cell>-->
+							<!--<div class="num_logo">-->
+								<!--<img src="../../../../static/images/user1.png">-->
+							<!--</div>-->
+							<!--<div class="num_name">-->
+								<!--<p class="s-name-title">安杰</p>-->
+								<!--<p class="s-name-cont"><span>医学院</span>&nbsp;<span>临床系</span>&nbsp;<span>院长</span></p>-->
+							<!--</div>-->
+						<!--</mt-cell>-->
+					<!--</mt-index-section>-->
+					<!--<mt-index-section index="C">-->
+						<!--<mt-cell title="CBaldwin"></mt-cell>-->
+						<!--<mt-cell title="CBraden"></mt-cell>-->
+					<!--</mt-index-section>-->
+					<!--<mt-index-section index="D">-->
+						<!--<mt-cell title="DBaldwin"></mt-cell>-->
+						<!--<mt-cell title="DBraden"></mt-cell>-->
+					<!--</mt-index-section>-->
+					<!--<mt-index-section index="E">-->
+						<!--<mt-cell title="EBaldwin"></mt-cell>-->
+						<!--<mt-cell title="EBraden"></mt-cell>-->
+					<!--</mt-index-section>-->
+					<!--<mt-index-section index="F">-->
+						<!--<mt-cell title="FBaldwin"></mt-cell>-->
+						<!--<mt-cell title="FBraden"></mt-cell>-->
+					<!--</mt-index-section>-->
+					<!--<mt-index-section index="Z">-->
+						<!--<mt-cell title="Zack"></mt-cell>-->
+						<!--<mt-cell title="Zane"></mt-cell>-->
+					<!--</mt-index-section>-->
 				</mt-index-list>
 			</div>
 
@@ -389,8 +447,7 @@
 			font-size: .20rem;
 			padding: 0.01rem .03rem;
 		}
-		.mint-indexsection {
-			border-top: none;
+		.mint-indexsection:first-child {
 			.mint-cell:first-child {
 				border-top: none;
 			}

@@ -174,6 +174,8 @@
         .angle {
             transform: none;
             font-weight: 900;
+			color: #d1d1d1;
+			font-size: 0.32rem;
         }
 		.wrap{
 			.mint-cell-value{

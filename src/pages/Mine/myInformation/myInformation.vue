@@ -205,6 +205,9 @@
 	.my-information .angle{
 		transition: all .5s ease;
 		transform: rotate(90deg);
+		font-size: 0.32rem;
+		font-weight: 900;
+		color: #c5c5c5;
 	}
 	.my-information .trans{
 		transform: rotate(-90deg);

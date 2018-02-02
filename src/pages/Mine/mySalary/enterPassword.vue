@@ -7,12 +7,22 @@
 			<div class="pass-wrap">
 				<p class="please">输入密码</p>
 				<div>
-					<input type="password" maxlength="1" v-focus-next-on-enter="'input2'" ref="input1" v-model="p1">
+					<input
+							type="password"
+							maxlength="1"
+							v-focus-next-on-enter="'input2'"
+							ref="input1"
+							v-model="p1">
 					<input type="password" maxlength="1" v-focus-next-on-enter="'input3'" ref="input2" v-model="p2">
 					<input type="password" maxlength="1" v-focus-next-on-enter="'input4'" ref="input3" v-model="p3">
 					<input type="password" maxlength="1" v-focus-next-on-enter="'input5'" ref="input4" v-model="p4">
 					<input type="password" maxlength="1" v-focus-next-on-enter="'input6'" ref="input5" v-model="p5">
-					<input type="password" maxlength="1" v-focus-next-on-enter="'input1'" ref="input6" v-model="p6">
+					<input
+							type="password"
+							maxlength="1"
+							v-focus-next-on-enter="'input1'"
+							ref="input6"
+							v-model="p6">
 				</div>
 				<p class="forget">
 					<a href="javascript:;">忘记密码?</a>
@@ -58,6 +68,9 @@
 		components: {
 		},
 		methods: {
+			go() {
+			    console.log(1)
+			}
 		},
         computed: {
 		},
@@ -66,6 +79,12 @@
 		mounted () {
 		},
         watch: {
+            p6: function (val) {
+                // console.log(val);
+                if( val != ''){
+                    this.$router.push({name:'mySalary'});
+				}
+            }
         }
     }
 </script>
@@ -108,7 +127,6 @@
 			}
 		}
 	}
-
 </style>
 
 

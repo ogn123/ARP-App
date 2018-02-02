@@ -226,6 +226,8 @@
     .projectBudget {
         padding-top: .2rem;
         margin-bottom: 0;
+        overflow: hidden;
+        overflow-y: auto;
         /*头部*/
         .s-project-title {
             background: #fff;
@@ -281,6 +283,7 @@
             padding: 0 .22rem .2rem .22rem;
             .mint-navbar {
                 display: inline-block;
+                overflow: hidden;
                 .mint-tab-item {
                     padding: 0;
                     width: 1.62rem;
@@ -403,7 +406,7 @@
                     .numbers {
                         width: 3rem;
                         font-size: .2rem;
-                        margin-left: -.2rem;
+                        margin-left: -.15rem;
                         color: #808080;
                         span:last-child {
                             color: #333333
@@ -422,6 +425,15 @@
                             border-bottom-left-radius:.3rem;
                             border-right: .02rem solid #f2f2f2;
                             position: relative;
+                            .numbers {
+                                width: 3rem;
+                                font-size: .2rem;
+                                margin-left: -.2rem;
+                                color: #808080;
+                                span:last-child {
+                                    color: #333333
+                                }
+                            }
                         }
                         .second-radius {
                             width:75%;

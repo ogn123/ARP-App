@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="txl2">
     <m-header :title="list2.academy" fixed>
       <i class="mintui mintui-back ml20" slot="left"></i>
     </m-header>
@@ -11,17 +11,19 @@
       <!--最近 联系人-->
       <ul class="txl_content">
         <li>
-          <p href="#" class="recent_contacts pd22" style="color: #858585;font-size: .24rem;height:.48rem;line-height: .4rem;">
-            <router-link to="/contact"><span style="color:rgb(133, 133, 133);">中科院</span></router-link>
-            <i class="icon iconfont icon-icon07" style="font-size: .32rem;"></i>
-            <span style="color: #146fec">{{list2.academy}}</span>
+          <p href="#" class="recent_contacts pd22">
+            <router-link to="/contact"><span class="zky">中科院</span></router-link>
+            <i class="icon iconfont icon-icon07"></i>
+            <span class="academy" style="color: #146fec">{{list2.academy}}</span>
           </p>
           <ul>
             <li class="t_allcontact pd22 clear a-ly" v-for="(item,i) in list2.acadata">
             	<router-link to="/contact/subContact/subContact1">
             		<p style="width: 100%; height: 100%;">
             			<span class="fl">{{item.name}}</span>
-              			<span class="fr f26">{{item.num}}<i class="icon iconfont icon-icon07" style="font-size: .32rem;"></i></span>
+                        <span class="fr f26">
+                            {{item.num}}
+                            <i class="icon iconfont icon-icon07"></i></span>
             		</p>
             	</router-link>
             </li>
@@ -61,4 +63,41 @@
 
   }
 </script>
+<style rel="stylesheet/scss" lang="scss">
+    .txl2{
+        .recent_contacts{
+            color: #858585;
+            font-size: .24rem;
+            height:.48rem;
+            line-height: .4rem;
+        }
+        .zky{
+            color:rgb(133, 133, 133);
+        }
+        .recent_contacts{
+            .icon{
+                font-size: .32rem;
+            }
+        }
+        .academy{
+
+        }
+        .f26{
+            i{
+                font-weight:900;
+                font-size: .32rem;
+                color: #d1d1d1
+            }
+        }
+        .txl_content{
+            li{
+                overflow: hidden;
+            }
+            .t_allcontact{
+                height: 0.81rem;
+                line-height: 0.81rem;
+            }
+        }
+    }
+</style>
 

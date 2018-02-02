@@ -24,7 +24,7 @@
 					</div>
 				</li>
 			</ul>
-			<div class="s-tabs">
+			<!--<div class="s-tabs">
 				<ul>
 					<li
 						v-for="(item,id) in sTabs"
@@ -32,55 +32,68 @@
 						<a href="javascript:;":class="{tabsisActive:tabsactive == id}">{{item}}</a>
 					</li>
 				</ul>
-			</div>
-			<!--搜索框部分-->
-			<div class="in_wrap">
-				<input type="text" class="search" placeholder="请输入单号或借款事由进行搜索">
-			</div>
-			<!--主体-->
-			<div class="s-contain">
-				<ul class="s-contain-title">
-					<li v-for="(item,id) in myaccountstatus" :class="{sbg:active==id}" @click="change(id,item)">{{item}}</li>
-				</ul>
-				<ul class="s-contain-contain" v-show="lisactive==0">
-					<li>
-						<p class="total">共计<span>3</span>条记录</p>
-					</li>
-					<li class="cycle" v-for="item in record" @click="go('paymentDetails')">
-						<p class="order"><span></span>单号：<i>{{item.num}}</i></p>
-						<div class="loan-detail">
-							<p>借款金额:<span>{{item.price}}</span></p>
-							<p>借款时间:<span>{{item.date}}</span></p>
-							<p>借款事由:<span>{{item.reason}}</span></p>
-						</div>
-						<div class="repayment">
-							<span>待还款：<i>{{item.repayment}}</i></span>
-							<span class="hk">还款</span>
-						</div>
-					</li>
-				</ul>
-				<ul class="s-contain-contain" v-show="lisactive==1">
-					<li>
-						<p>审批中</p>
-					</li>
-				</ul>
-				<ul class="s-contain-contain" v-show="lisactive==2">
-					<li>
-						<p>财务审核</p>
-					</li>
-				</ul>
-				<ul class="s-contain-contain" v-show="lisactive==3">
-					<li>
-						<p>已办结</p>
-					</li>
-				</ul>
-				<ul class="s-contain-contain" v-show="lisactive==4">
-					<li>
-						<p>草稿</p>
-					</li>
-				</ul>
-			</div>
-			<div class="edit"></div>
+			</div>-->
+			<mt-navbar v-model="selected">
+				<mt-tab-item id="1">借款列表</mt-tab-item>
+				<mt-tab-item id="2">借款统计</mt-tab-item>
+			</mt-navbar>
+
+			<mt-tab-container v-model="selected">
+				<mt-tab-container-item id="1">
+					<!--搜索框部分-->
+					<div class="in_wrap">
+						<input type="text" class="search" placeholder="请输入单号或借款事由进行搜索">
+					</div>
+					<!--主体-->
+					<div class="s-contain">
+						<ul class="s-contain-title">
+							<li v-for="(item,id) in myaccountstatus" :class="{sbg:active==id}" @click="change(id,item)">{{item}}</li>
+						</ul>
+						<ul class="s-contain-contain" v-show="lisactive==0">
+							<li>
+								<p class="total">共计<span>3</span>条记录</p>
+							</li>
+							<li class="cycle" v-for="item in record" @click="go('paymentDetails')">
+								<p class="order"><span></span>单号：<i>{{item.num}}</i></p>
+								<div class="loan-detail">
+									<p>借款金额:<span>{{item.price}}</span></p>
+									<p>借款时间:<span>{{item.date}}</span></p>
+									<p>借款事由:<span>{{item.reason}}</span></p>
+								</div>
+								<div class="repayment">
+									<span>待还款：<i>{{item.repayment}}</i></span>
+									<span class="hk">还款</span>
+								</div>
+							</li>
+						</ul>
+						<ul class="s-contain-contain" v-show="lisactive==1">
+							<li>
+								<p>审批中</p>
+							</li>
+						</ul>
+						<ul class="s-contain-contain" v-show="lisactive==2">
+							<li>
+								<p>财务审核</p>
+							</li>
+						</ul>
+						<ul class="s-contain-contain" v-show="lisactive==3">
+							<li>
+								<p>已办结</p>
+							</li>
+						</ul>
+						<ul class="s-contain-contain" v-show="lisactive==4">
+							<li>
+								<p>草稿</p>
+							</li>
+						</ul>
+					</div>
+					<div class="edit"></div>
+				</mt-tab-container-item>
+				<mt-tab-container-item id="2">
+					<p>报销统计</p>
+				</mt-tab-container-item>
+			</mt-tab-container>
+
 		</m-contain>
 	</div>
 </template>
@@ -147,6 +160,38 @@
 	.my-loan{
 		.contain{
 			margin-bottom: 0;
+		}
+		/*顶部tabs*/
+		.mint-navbar{
+			border-bottom: 1px solid #e8e8e8;
+			.mint-tab-item{
+				margin: 0 1.2rem;
+				padding: 0.2rem 0;
+				position: relative;
+				color: #858585;
+				box-sizing: border-box;
+				.mint-tab-item-label {
+					font-size: 0.28rem !important;
+				}
+				&.is-selected {
+					margin-bottom: 0;
+					color: #146fec;
+					border-bottom: 3px solid #146fec;
+				}
+				&:after {
+					content: "\200B";
+					display: block;
+					width: 1px;
+					height: .35rem;
+					position: absolute;
+					top: .2rem;
+					right: -1.2rem;
+					background: #e8e8e8;
+				}
+				&:last-child:after{
+					display: none;
+				}
+			}
 		}
 		.loan-top{
 			display: flex;
