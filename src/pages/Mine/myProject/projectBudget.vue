@@ -19,14 +19,17 @@
                     </span>
                 </div>
                 <mt-navbar v-model="budgetCount">
-                    <mt-tab-item id="1">汇总</mt-tab-item>
-                    <mt-tab-item id="2">2017年</mt-tab-item>
-                    <mt-tab-item id="3">自定义</mt-tab-item>
+                    <!--<mt-tab-item id="1">汇总</mt-tab-item>-->
+                    <!--<mt-tab-item id="2">2017年</mt-tab-item>-->
+                    <!--<mt-tab-item id="3">自定义</mt-tab-item>-->
+                    <div class="count-tabs" v-for="(item, id) in countTabs" :class="{isSelected:active1==item.id}"  @click="tabsClick1(item.id)">{{item.name}}</div>
+                    <!--<div class="count-tabs">2017年</div>-->
+                    <!--<div class="count-tabs">自定义</div>-->
                 </mt-navbar>
 
                 <!-- tab-container -->
                 <mt-tab-container v-model="budgetCount">
-                    <mt-tab-container-item id="1">
+                    <mt-tab-container-item id="hz">
                         <div class="s-money-list clearfix">
                             <div>
                                 <p>预算总额</p>
@@ -101,10 +104,10 @@
                             </div>
                         </div>
                     </mt-tab-container-item>
-                    <mt-tab-container-item id="2">
+                    <mt-tab-container-item id="year">
                         2
                     </mt-tab-container-item>
-                    <mt-tab-container-item id="3">
+                    <mt-tab-container-item id="zdy">
                         3
                     </mt-tab-container-item>
                 </mt-tab-container>
@@ -118,13 +121,14 @@
                     </span>
                 </div>
                 <mt-navbar v-model="budgetSubject">
-                    <mt-tab-item id="1">全国</mt-tab-item>
-                    <mt-tab-item id="2">国拨经费</mt-tab-item>
+                    <!--<mt-tab-item id="1">全国</mt-tab-item>-->
+                    <!--<mt-tab-item id="2">国拨经费</mt-tab-item>-->
+                    <div class="count-tabs" v-for="(item, id) in budgetSubjects" :class="{isSelected:active2==item.id}"  @click="tabsClick2(item.id)">{{item.name}}</div>
                 </mt-navbar>
 
                 <!-- tab-container -->
                 <mt-tab-container v-model="budgetSubject">
-                    <mt-tab-container-item id="1">
+                    <mt-tab-container-item id="qg">
                         <div class="budget-total clearfix">
                             <span>合计</span>
                             <span><i>{{data.useTotal}}万</i>&nbsp;/&nbsp;{{data.allTotal}}万</span>
@@ -141,7 +145,7 @@
                             </div>
                         </div>
                     </mt-tab-container-item>
-                    <mt-tab-container-item id="2">
+                    <mt-tab-container-item id="gbjf">
                         2
                     </mt-tab-container-item>
                 </mt-tab-container>
@@ -155,11 +159,29 @@
         name: 'projectBudget',
         data() {
             return {
+                active1: 'hz',
                 // 预算统计tabs
-                budgetCount: '1',
+                budgetCount: 'hz',
+                countTabs: [{
+                   id: 'hz',
+                   name: '汇总'
+                },{
+                    id: 'year',
+                    name: new Date().getFullYear()-1 +'年'
+                },{
+                    id: 'zdy',
+                    name:'自定义'
+                }],
                 // 预算科目tabs
-                budgetSubject: '1',
-
+                active2: 'qg',
+                budgetSubject: 'qg',
+                budgetSubjects: [{
+                    id: 'qg',
+                    name: '全国'
+                },{
+                    id: 'gbjf',
+                    name:'国拨经费'
+                }],
                 total: 0,
                 execute: 22.08,
                 usable: 11.08,
@@ -197,6 +219,15 @@
         components: {
         },
         methods: {
+            // tabs切换
+            tabsClick1 (id) {
+                this.active1 = id;
+                this.budgetCount = id;
+            },
+            tabsClick2 (id) {
+                this.active2 = id;
+                this.budgetSubject = id;
+            },
             cssComputed () {
                 let first = document.getElementById('firstRadius');
                 let second = document.getElementById('secondRadius');
@@ -284,7 +315,7 @@
             .mint-navbar {
                 display: inline-block;
                 overflow: hidden;
-                .mint-tab-item {
+                .count-tabs {
                     padding: 0;
                     width: 1.62rem;
                     height: .46rem;
@@ -293,18 +324,14 @@
                     flex: 0;
                     float: left;
                     margin-right: .2rem;
-                    .mint-tab-item-label {
-                        font-size: .24rem;
-                        color: #c6c6c6;
-                        text-align: center;
-                        line-height: .46rem;
-                    }
+                    line-height: .46rem;
+                    font-size: .24rem;
+                    color: #c6c6c6;
+                    text-align: center;
                 }
-                .is-selected {
+                .isSelected {
                     border-color: #167aef;
-                    .mint-tab-item-label{
-                        color: #167aef;
-                    }
+                    color: #167aef;
                 }
             }
             .s-money-list {

@@ -10,17 +10,21 @@
             <div class="s-contain">
                 <div class="s-contain-title clearfix">
                     <mt-navbar v-model="selected" class="title-left">
-                        <mt-tab-item id="1">主持的</mt-tab-item>
-                        <mt-tab-item id="2">参与的</mt-tab-item>
+                        <!--<mt-tab-item id="1">主持的</mt-tab-item>-->
+                        <!--<mt-tab-item id="2">参与的</mt-tab-item>-->
+                        <div class="top-tabs" v-for="(leftItem,leftId) in leftTab" :class="{isSelected:active==leftItem.id}" @click="tabsClick(leftItem.id)">{{leftItem.name}}</div>
+                        <!--<div class="top-tabs">参与的</div>-->
                     </mt-navbar>
                     <mt-navbar v-model="selected" class="title-right">
-                        <mt-tab-item id="3">审批中</mt-tab-item>
-                        <mt-tab-item id="4">暂存中</mt-tab-item>
+                        <!--<mt-tab-item id="3">审批中</mt-tab-item>-->
+                        <!--<mt-tab-item id="4">暂存中</mt-tab-item>-->
+                        <div class="top-tabs" v-for="(rightItem,rightId) in rightTab" :class="{isSelected:active==rightItem.id}" @click="tabsClick(rightItem.id)">{{rightItem.name}}</div>
+                        <!--<div class="top-tabs">暂存中</div>-->
                     </mt-navbar>
                 </div>
                 <!-- tab-container -->
                 <mt-tab-container v-model="selected">
-                    <mt-tab-container-item id="1" @click.native='go("projectDetail")'>
+                    <mt-tab-container-item id="zcd" @click.native='go("projectDetail")'>
                         <div class="s-contain-list" v-for="(item,index) in data">
                             <div class="s-contain-list-title">{{item.title}}</div>
                             <div class="s-contain-list-con clearfix">
@@ -59,13 +63,13 @@
                             </div>
                         </div>
                     </mt-tab-container-item>
-                    <mt-tab-container-item id="2">
+                    <mt-tab-container-item id="cyd">
                         <mt-cell v-for="n in 4" :title="'参与中 ' + n" />
                     </mt-tab-container-item>
-                    <mt-tab-container-item id="3">
+                    <mt-tab-container-item id="spz">
                         <mt-cell v-for="n in 6" :title="'审批中 ' + n" />
                     </mt-tab-container-item>
-                    <mt-tab-container-item id="4">
+                    <mt-tab-container-item id="zcz">
                         <mt-cell v-for="n in 6" :title="'暂存中 ' + n" />
                     </mt-tab-container-item>
                 </mt-tab-container>
@@ -82,6 +86,9 @@
         name: 'myProject',
         data() {
             return {
+                leftTab: [{id: 'zcd',name:'主持的'}, {id: 'cyd',name:'参与的'}],
+                rightTab: [{id: 'spz',name:'审批中'}, {id: 'zcz',name:'暂存中'}],
+                active: 'zcd',
                 value: '',
                 data: [{
                     title: 'Y729361 咨询评议项目管理系统',
@@ -116,16 +123,39 @@
                     gone: 78.08,
                     usable: 21.01,
                     number: 80
+                },{
+                    title: 'ARP 咨询评议项目管理系统',
+                    type: '计算机网络信息中心',
+                    name: '柳源',
+                    code: 'ZKY1101AG101',
+                    startDate: '2017-01-02',
+                    endDate: '2-13-09-09',
+                    budget: 78.08,
+                    gone: 78.08,
+                    usable: 21.01,
+                    number: 50
+                },{
+                    title: 'ARP1 咨询评议项目管理系统',
+                    type: '计算机网络信息中心1',
+                    name: '柳源1',
+                    code: 'ZKY1101AG101',
+                    startDate: '2017-01-02',
+                    endDate: '2-13-09-09',
+                    budget: 78.08,
+                    gone: 78.08,
+                    usable: 21.01,
+                    number: 80
                 }],
-                selected: '1'
+                selected: 'zcd'
             }
         },
         components: {
         },
         methods: {
-            change (index, item) {
-                this.active = index;
-                this.lisactive = index;
+            // tabs切换
+            tabsClick (id) {
+                this.active=id;
+                this.selected=id;
             },
             // canvas渲染
             canvasLoad () {
@@ -153,6 +183,7 @@
 <style lang="scss">
     .my-project{
         .myproject {
+            margin-bottom: 0;
             /*搜索框*/
             .mint-search {
                 height:1rem !important;
@@ -182,40 +213,61 @@
                 }
                 .s-contain-title {
                     padding: .18rem 0;
-                    height: 1rem;
+                    /*height: 1rem;*/
                     /*margin-bottom: .20rem;*/
-                    line-height: 1rem;
+                    /*line-height: 1rem;*/
                     .mint-navbar {
-                        .mint-tab-item {
-                            padding: 0;
-                            border: 1px solid #146fec;
-                            width: 1.4rem;
-                            text-align: center;
-                            height: .6rem;
-                            color: #146fec;
-                            .mint-tab-item-label {
-                                line-height: .6rem;
-                                font-size: .28rem;
-                            }
-                            &:first-child {
-                                border-right: none;
-                                border-bottom-left-radius: .05rem;
-                                border-top-left-radius: .05rem;
-                            }
-                            &:last-child {
-                                border-bottom-right-radius: .05rem;
-                                border-top-right-radius: .05rem;
-                            }
-                            &.is-selected {
-                                background: #146fec;
-                                color: #fff;
-                            }
+                        /*.mint-tab-item {*/
+                            /*padding: 0;*/
+                            /*border: 1px solid #146fec;*/
+                            /*width: 1.4rem;*/
+                            /*text-align: center;*/
+                            /*height: .6rem;*/
+                            /*color: #146fec;*/
+                            /*.mint-tab-item-label {*/
+                                /*line-height: .6rem;*/
+                                /*font-size: .28rem;*/
+                            /*}*/
+                            /*&:first-child {*/
+                                /*border-right: none;*/
+                                /*border-bottom-left-radius: .05rem;*/
+                                /*border-top-left-radius: .05rem;*/
+                            /*}*/
+                            /*&:last-child {*/
+                                /*border-bottom-right-radius: .05rem;*/
+                                /*border-top-right-radius: .05rem;*/
+                            /*}*/
+                            /*&.is-selected {*/
+                                /*background: #146fec;*/
+                                /*color: #fff;*/
+                            /*}*/
+                        /*}*/
+                    }
+                    .top-tabs {
+                        padding: 0;
+                        border: 1px solid #146fec;
+                        width: 1.4rem;
+                        text-align: center;
+                        height: .6rem;
+                        color: #146fec;
+                        line-height: .6rem;
+                        &:first-child {
+                            border-right: none;
+                            border-bottom-left-radius: .05rem;
+                            border-top-left-radius: .05rem;
+                        }
+                        &:last-child {
+                            border-bottom-right-radius: .05rem;
+                            border-top-right-radius: .05rem;
+                        }
+                        &.isSelected {
+                            background: #146fec;
+                            color: #fff;
                         }
                     }
                     .title-left {
                         float: left;
                         margin-left: .85rem;
-
                     }
                     .title-right {
                         float: right;
