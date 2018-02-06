@@ -390,13 +390,15 @@
 			padding: 0.01rem .03rem;
 		}
 		.mint-indexsection {
-			border-top: none;
-			.mint-cell:first-child {
-				border-top: none;
+			/*border-top: none;*/
+			.mint-cell:last-child {
+				background-image: none;
 			}
 		}
 		.mint-indexlist-content {
 			margin-right: 0 !important;
+			height: 10rem;
+			overflow-y: auto;
 		}
 	}
 </style>

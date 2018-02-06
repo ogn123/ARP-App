@@ -109,11 +109,14 @@
 			height: 0.78rem;
 			line-height: 0.78rem;
 			text-align: center;
-			outline: none;
 			border-radius: 0;
 			border: 1px solid #e8e8e8;
 			margin: 0 0.15rem;
-			font-size: 0.7rem;
+			outline: none;
+			-webkit-appearance: none;/*去除统一默认的样式*/
+			-webkit-tap-highlight-color: rgba(0,0,0,0);
+			/*去除点击高亮*/
+			/*font-size: 0.7rem;*/
 		}
 		.forget{
 			text-align: right;

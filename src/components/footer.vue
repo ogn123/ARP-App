@@ -1,5 +1,6 @@
 <template>
 	<div>
+
 		<ul class="s-router">
 			<li v-for="(item,id) in navs" :key="item.id" @click="jump(item.link)" :class="{activecheck: isRouterMatch(item.id),noactivecheck:!isRouterMatch(item.id)}">
 				<i class="icon iconfont" :class="item.iname"></i>
@@ -15,27 +16,27 @@
 			return {
 				navs:[{
 					name:'首页',
-					iname:'icon-icon-f1',
+					iname:'icon-ahome',
 					link:'/',	
 					id:'01'
 				},{
 					name:'消息',
-					iname:'icon-xiaoxi',
+					iname:'icon-amessage',
 					link:'/message',
 					id:'02'
 				},{
 					name:'通讯录',
-					iname:'icon-global phone',
+					iname:'icon-acontacts',
 					link:'/contact',
 					id:'03'
 				},{
 					name:'应用',
-					iname:'icon-yingyong',
+					iname:'icon-application',
 					link:'/application',
 					id:'04'
 				},{
 					name:'我的',
-					iname:'icon-person',
+					iname:'icon-amine',
 					link:'/mine',
 					id:'05'
 				}]
@@ -100,8 +101,8 @@
 		}
 		li:nth-child(3){
 			i{
-				font-size: 0.57rem;
-				margin-bottom: 0.05rem
+				/*font-size: 0.57rem;
+				margin-bottom: 0.05rem*/
 			}
 		}
 				

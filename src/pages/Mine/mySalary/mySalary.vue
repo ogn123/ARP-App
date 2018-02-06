@@ -269,12 +269,21 @@
 		.mint-popup-bottom{
 			width: 100%;
 		}
-		.time-range input{
-			width: 1.45rem;
-			background: #fff;
-			border: none;
-			color: #2777e4;
-			padding-left: 0.2rem;
+		.time-range{
+			input{
+				width: 1.45rem;
+				background: #fff;
+				border: none;
+				color: #2777e4;
+				padding-left: 0.2rem;
+			}
+			input:disabled, input[disabled]{
+				color: #2777e4;
+				-webkit-text-fill-color:#2777e4;
+				-webkit-opacity:1;
+				opacity: 1;
+			}
+
 		}
 		.s-contain{
 			height: 0.75rem;
