@@ -16,7 +16,7 @@
 				<span style="color: #146fec">{{title}}</span>
 			</p>
 			<div class="person-lists">
-				<mt-index-list>
+				<mt-index-list :show-indicator="true">
 					<mt-index-section :index="item.index" v-for="item in person">
 						<mt-cell v-for="item1 in item.lists" @click.native="go('PersonDetail')">
 							<div class="num_logo">
@@ -30,7 +30,6 @@
 					</mt-index-section>
 				</mt-index-list>
 			</div>
-
 		</m-contain>
 
 	</div>
@@ -323,8 +322,19 @@
                 window.pageYOffset = 0 ;
                 document.documentElement.scrollTop = 0 ;
                 document.body.scrollTop = 0;
-            }
-		}
+            },
+			// 右边导航栏禁止滑动
+            stopSrcoll () {
+                document.querySelector('.mint-indexlist-nav').addEventListener('touchmove', function (ev) {
+                     ev.stopPropagation();
+                     event.preventDefault();
+                    // return false
+                },false);
+			}
+		},
+        mounted() {
+			this.stopSrcoll();
+        }
 	}
 </script>
 <style lang="scss">
@@ -387,18 +397,17 @@
 		.mint-indexlist-navitem {
 			color: #519dea;
 			font-size: .20rem;
-			padding: 0.01rem .03rem;
+			padding: 0.01rem .2rem;
 		}
 		.mint-indexsection {
-			/*border-top: none;*/
 			.mint-cell:last-child {
 				background-image: none;
 			}
 		}
 		.mint-indexlist-content {
 			margin-right: 0 !important;
-			height: 10rem;
 			overflow-y: auto;
+			height: 20rem;
 		}
 	}
 </style>
