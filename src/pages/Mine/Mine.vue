@@ -9,16 +9,11 @@
 						<p>UES &nbsp;DESIGN</p>
 						<p>个性签名</p>
 					</div>
-					<img slot="icon" src="../../../static/images/user1.png">
+					<img slot="icon" src="../../assets/images/user1.png">
 					<i class="icon iconfont icon-icon07 angle"></i>
 				</mt-cell>
 			</div>
 			<div class="wrap">
-				<!--<mt-cell v-for="(item, index) in item.list1">-->
-					<!--<span>{{item.name}}</span>-->
-					<!--<img slot="icon" :src="item.img">-->
-					<!--<i class="icon iconfont icon-icon07 angle"></i>-->
-				<!--</mt-cell>-->
 				<mt-cell @click.native="go('myInformation')">
 					<span>我的信息</span>
 					<img slot="icon" src="../../../static/images/mine1.png">

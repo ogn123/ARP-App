@@ -90,19 +90,19 @@
 				swiper: [{
 					id: 1,
 					title: '日本人来中国',
-					src: '../../../static/images/swiper.png'
+					src: require('../../assets/images/swiper.png')
 				}, {
 					id: 2,
 					title: '日本人来中国1',
-					src: '../../../static/images/swiper.png'
+					src: require('../../assets/images/swiper.png')
 				}, {
 					id: 3,
 					title: '日本人来中国2',
-					src: '../../../static/images/swiper.png'
+					src: require('../../assets/images/swiper.png')
 				}, {
 					id: 4,
 					title: '日本人来中国3',
-					src: '../../../static/images/swiper.png'
+					src: require('../../assets/images/swiper.png')
 				}],
 				navs:[{
 					iClass:'s-index-bx',

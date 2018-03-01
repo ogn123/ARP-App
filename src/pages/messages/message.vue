@@ -34,31 +34,31 @@
 					    text: '系统消息',
 						label: '欢迎使用新一代arp系统',
 						time: '17:34',
-						img: '../../../static/images/user5.png'
+						img: require('../../assets/images/user5.png')
 					},
                     {
                         text: '张三',
                         label: '在哪？',
                         time: '昨天',
-                        img: '../../../static/images/user2.png'
+                        img: require('../../assets/images/user2.png')
                     },
                     {
                         text: '李四',
                         label: '项目申请好了吗？',
                         time: '两天前',
-                        img: '../../../static/images/user3.png'
+                        img: require('../../assets/images/user3.png')
                     },
                     {
                         text: '王五',
                         label: '报销到帐了，你确认一下吧',
                         time: '10月13日',
-                        img: '../../../static/images/user4.png'
+                        img: require('../../assets/images/user4.png')
                     },
                     {
                         text: '赵六',
                         label: '请问您下午在办公室吗，有点事情想找您',
                         time: '9月1日',
-                        img: '../../../static/images/user1.png'
+                        img: require('../../assets/images/user1.png')
                     }
 				]
 

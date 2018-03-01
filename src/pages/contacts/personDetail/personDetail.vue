@@ -64,7 +64,7 @@
 			return {
 				person:{
 					name:'蔚然',
-					img:'../../../../static/images/user2.png',
+					img:require('../../../assets/images/user2.png'),
 					sex:'男',
 					age:'48',
 					id:'B90909',
@@ -92,7 +92,7 @@
 	.s-person-top{
 		height: 3.22rem;
 		width: 100%;
-		background: url('../../../assets/images/bg.png') no-repeat;
+		background: url('../../../../static/images/bg.png') no-repeat;
 		background-size: cover;
 		i{
 			color: #ffffff;
@@ -155,7 +155,7 @@
 			}
 		}
 		li:after{
-				content:'',;
+				content:'';
 				height: .45rem;
 				width: 1px;
 				position: absolute;

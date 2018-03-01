@@ -112,7 +112,7 @@
         height: 0.64rem;
         border: 1px solid #cbcbcb;
         padding-left: 0.68rem;
-        background: #fff url("../../../assets/images/searchIcon.png") no-repeat 0.26rem center;
+        background: #fff url("../../../../static/images/searchIcon.png") no-repeat 0.26rem center;
         background-size: 0.3rem 0.3rem;
         border-radius: 5px;
         outline: none;

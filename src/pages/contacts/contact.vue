@@ -58,25 +58,25 @@
 				rencontacts: {
 					"recentcontacts": "最近联系人",
 					"rencontent": [{
-						'img': "../../../static/images/user1.png",
+						'img': require("../../assets/images/user1.png"),
 						"name": "安素荣",
 						"ym": '医学院',
 						"xm": '临床系',
 						"zw": '院长'
 					}, {
-						'img': "../../../static/images/user2.png",
+						'img': require("../../assets/images/user2.png"),
 						"name": "白洁",
 						"ym": '能源动力学院',
 						"xm": '涡轮系',
 						"zw": '教授'
 					}, {
-						'img': "../../../static/images/user3.png",
+						'img': require("../../assets/images/user3.png"),
 						"name": "白洁",
 						"ym": '能源动力学院',
 						"xm": '流体动力系',
 						"zw": '教授'
 					}, {
-						'img': "../../../static/images/user4.png",
+						'img': require("../../assets/images/user4.png"),
 						"name": "白洁",
 						"ym": '能源动力学院',
 						"xm": '流体动力系',
@@ -187,7 +187,7 @@
     height: 0.64rem;
     border: 1px solid #cbcbcb;
     padding-left: 0.68rem;
-    background:#fff url("../../assets/images/searchIcon.png") no-repeat 0.26rem center;
+    background:#fff url("../../../static/images/searchIcon.png") no-repeat 0.26rem center;
     background-size: 0.3rem 0.3rem;
     border-radius: 5px;
     outline: none;
