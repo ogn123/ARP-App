@@ -19,7 +19,7 @@
 							<p class="icon"></p>
 							<p class="state">请假</p>
 						</div>
-						<div class="icon-item">
+						<div class="icon-item" @click="go('myLoan')">
 							<p class="icon"></p>
 							<p class="state">借款</p>
 						</div>

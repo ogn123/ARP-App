@@ -21,7 +21,7 @@
                     <div>
                         <!--多少条记录-->
                         <div class="total-record">
-                            <span style="font-size: .24rem">共{{list.length}}条记录</span>
+                            <span>共{{list.length}}条记录</span>
                         </div>
                         <div v-for="item in list" class="list">
                             <div class="list-container">
@@ -61,8 +61,8 @@
                             <li v-for="(item,id) in myaccountstatus" :class="{sbg:active==id}" @click="change(id,item)">{{item}}</li>
                         </ul>
                         <!--多少条记录-->
-                        <div class="record" style="padding: 0">
-                            <span style="font-size: .24rem">共{{data.length}}条记录</span>
+                        <div class="record">
+                            <span>共{{data.length}}条记录</span>
                         </div>
                         <!--审批中-->
                         <ul class="s-contain-contain" v-for="(item,id) in data" id="spz" v-show="lisactive==0">
@@ -306,9 +306,6 @@
         right: .24rem;
         bottom: .4rem;
         background-size: contain;
-    }
-    .subrecord{
-        font-size:.24rem;
     }
 </style>
 <style lang="scss">

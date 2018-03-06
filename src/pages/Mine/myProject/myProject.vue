@@ -73,7 +73,7 @@
                         <mt-cell v-for="n in 6" :title="'暂存中 ' + n" />
                     </mt-tab-container-item>
                 </mt-tab-container>
-                <div class="add"></div>
+                <!--<div class="add"></div>-->
             </div>
 
         </m-contain>

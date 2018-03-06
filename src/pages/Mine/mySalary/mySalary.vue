@@ -5,13 +5,13 @@
 		</m-header>
 		<m-contain class="myaccount">
 			<!--搜索框部分-->
-			<div class="time-range">
+			<div class="time-range" @click="change">
 				<span>时间范围:</span>
 				<input type="text" disabled v-model="date1">
 				<span>至</span>
 				<input type="text" disabled v-model="date2">
 				<span class="funnel">
-					<i class="s-loudou" @click="change" :class="popupVisible? 'red':''"></i>
+					<i class="s-loudou"  :class="popupVisible? 'red':''"></i>
 				</span>
 			</div>
 			<div class="b-contain">

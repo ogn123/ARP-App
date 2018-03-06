@@ -34,7 +34,7 @@
 					    text: '系统消息',
 						label: '欢迎使用新一代arp系统',
 						time: '17:34',
-						img: require('../../assets/images/user5.png')
+						img: require('../../assets/images/user1.png')
 					},
                     {
                         text: '张三',
@@ -58,7 +58,7 @@
                         text: '赵六',
                         label: '请问您下午在办公室吗，有点事情想找您',
                         time: '9月1日',
-                        img: require('../../assets/images/user1.png')
+                        img: require('../../assets/images/user5.png')
                     }
 				]
 

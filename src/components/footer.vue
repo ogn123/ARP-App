@@ -1,7 +1,6 @@
 <template>
-	<div>
-
-		<ul class="s-router">
+	<div class="s-router">
+		<ul style="overflow: hidden">
 			<li v-for="(item,id) in navs" :key="item.id" @click="jump(item.link)" :class="{activecheck: isRouterMatch(item.id),noactivecheck:!isRouterMatch(item.id)}">
 				<i class="icon iconfont" :class="item.iname"></i>
 				<span>{{item.name}}</span>
@@ -49,7 +48,10 @@
 			},
 			// 跳转
 			jump(link) {
-				this.$router.push(link)
+				this.$router.push(link);
+				window.pageYOffset = 0 ;
+                document.documentElement.scrollTop = 0 ;
+                document.body.scrollTop = 0;
 			}
 
 		}
