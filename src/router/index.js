@@ -64,6 +64,9 @@ import SubContact1 from '../pages/contacts/subContact1/subContact1'
 //个人信息详细页
 import PersonDetail from '../pages/contacts/personDetail/personDetail'
 
+// 登陆页面
+import Login from '../pages/login/login'
+
 import Mine from '../pages/Mine/Mine'
 //引入头部组件
 import Title from '../components/header'
@@ -80,6 +83,7 @@ Vue.component('m-contain',Container);
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -259,6 +263,13 @@ export default new Router({
       name: 'Mine',
       component: Mine,
       meta: {keepAlive: false, menuId: '05'}
+    },
+    // 登陆 路由配置
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login,
+      // meta: {keepAlive: false, menuId: '05'}
     },
     {
       path: '/Index',
