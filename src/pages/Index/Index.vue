@@ -2,27 +2,66 @@
 	<div class="index">
 		<div class="s-index-header">
 			<img src="../../../static/images/logo.png" />
-			<h3>中科软ARP系统</h3>
+			<h3>中科院ARP系统</h3>
 		</div>
 		<m-contain class="s-index-contain">
 			<!--轮播图-->
-			<mt-swipe :auto="0" style="height: 2.5rem; width:100%">
+			<!-- <mt-swipe :auto="0" style="height: 2.5rem; width:100%">
 				<mt-swipe-item v-for="(item,index) in swiper" :key="item.id"><img :src="item.src" class="s-index-swiper" /></mt-swipe-item>
-			</mt-swipe>
+			</mt-swipe> -->
+			
 			<div class="s-index-navs">
 				<ul>
-					<li v-for="(item,id) in navs">
+					<li v-for="(item,id) in navs" :key="id">
 						<i :class="item.iClass"></i>
 						<p>{{item.name}}</p>
 					</li>
 				</ul>
 			</div>
+			<ul class="content-wrap s-index-all-navs clearfix">
+				<li v-for="(item,id) in allNavs" :key="id">
+					<i :class="item.iClass"></i>
+					<p>{{item.name}}</p>
+				</li>
+				<!-- <li>
+					<i class="s-index-meetingManage"></i>
+					<p>会议管理</p>
+				</li>
+				<li>
+					<i class="s-index-meetingManage"></i>
+					<p>共享资源</p>
+				</li>
+				<li>
+					<i class="s-index-meetingManage"></i>
+					<p>内容发布</p>
+				</li>
+				<li>
+					<i class="s-index-meetingManage"></i>
+					<p>公示管理</p>
+				</li>
+				<li>
+					<i class="s-index-meetingManage"></i>
+					<p>我的信息</p>
+				</li>
+				<li>
+					<i class="s-index-meetingManage"></i>
+					<p>我的薪酬</p>
+				</li>
+				<li>
+					<i class="s-index-meetingManage"></i>
+					<p>请假</p>
+				</li>
+				<li>
+					<i class="s-index-meetingManage"></i>
+					<p>更多</p>
+				</li> -->
+			</ul>
 			<!--通告-->
 			<div class="s-index-tg content-wrap">
 				<div class="s-tg-left"></div>
 				<div class="s-tg-middle">
 					<ul>
-						<li v-for="(item,index) in tonggao">
+						<li v-for="(item,index) in tonggao" :key="index">
 							<span><i></i>{{item.content}}</span>
 							<span>{{item.date | tgdate}}</span>
 						</li>
@@ -39,7 +78,7 @@
 				<div class="s-db-title">
 					<div class="s-db-title-left">
 						<i></i>
-						<span>我的待办</span>
+						<span>综合财务</span>
 					</div>
 					<div class="s-db-title-right">
 						<i class="icon iconfont icon-icon07"></i>
@@ -47,7 +86,7 @@
 				</div>
 				<div class="s-db-content">
 					<ul>
-						<li v-for="(item,index) in daiban">
+						<li v-for="(item,index) in daiban" :key="index">
 							<div><i :class="{isShow:item.isShow}"></i><span>{{item.date | tgdate}}</span></div>
 							<div>{{item.contain}}</div>
 						</li>
@@ -58,7 +97,7 @@
 				<div class="s-rc-title">
 					<div class="s-rc-title-left">
 						<i></i>
-						<span>我的日程</span>
+						<span>科研项目</span>
 					</div>
 					<div class="s-rc-title-right">
 						<i class="icon iconfont icon-icon07"></i>
@@ -66,7 +105,7 @@
 				</div>
 				<div class="s-rc-content">
 					<ul>
-						<li v-for="(item,index) in richeng">
+						<li v-for="(item,index) in richeng" :key="index">
 							<div><i :class="{isShow:item.isShow}"></i><span>{{item.date | tgdate}} &nbsp;&nbsp;{{item.place}}   </span></div>
 							<div>{{item.contain}}</div>
 						</li>
@@ -87,39 +126,61 @@
 		data() {
 			return {
 				isShow:false,
-				swiper: [{
-					id: 1,
-					title: '日本人来中国',
-					src: require('../../assets/images/swiper.png')
-				}, {
-					id: 2,
-					title: '日本人来中国1',
-					src: require('../../assets/images/swiper.png')
-				}, {
-					id: 3,
-					title: '日本人来中国2',
-					src: require('../../assets/images/swiper.png')
-				}, {
-					id: 4,
-					title: '日本人来中国3',
-					src: require('../../assets/images/swiper.png')
-				}],
+				// swiper: [{
+				// 	id: 1,
+				// 	title: '日本人来中国',
+				// 	src: require('../../assets/images/swiper.png')
+				// }, {
+				// 	id: 2,
+				// 	title: '日本人来中国1',
+				// 	src: require('../../assets/images/swiper.png')
+				// }, {
+				// 	id: 3,
+				// 	title: '日本人来中国2',
+				// 	src: require('../../assets/images/swiper.png')
+				// }, {
+				// 	id: 4,
+				// 	title: '日本人来中国3',
+				// 	src: require('../../assets/images/swiper.png')
+				// }],
 				navs:[{
-					iClass:'s-index-bx',
-					name:'报销'
+					iClass:'s-index-messageSearch',
+					name:'信息查询'
 				},{
-					iClass:'s-index-dc',
-					name:'订餐'
-				},{
-					iClass:'s-index-qj',
-					name:'请假'
+					iClass:'s-index-sendCon',
+					name:'发文'
 				},{
 					iClass:'s-index-sw',
 					name:'收文'
 				},{
-					iClass:'s-index-gd',
-					name:'更多'
+					iClass:'s-index-bx',
+					name:'报销'
 				}],
+				allNavs:[{
+					iClass:'s-index-meetingManage',
+					name:'会议管理'
+				},{
+					iClass:'s-index-shareResource',
+					name:'共享资源'
+				},{
+					iClass:'s-index-sendContent',
+					name:'内容发布'
+				},{
+					iClass:'s-index-noticeManage',
+					name:'公示管理'
+				},{
+					iClass:'s-index-myInform',
+					name:'我的信息'
+				},{
+					iClass:'s-index-mySalary',
+					name:'我的薪酬'
+				},{
+					iClass:'s-index-myleave',
+					name:'请假'
+				},{
+					iClass:'s-index-more',
+					name:'更多'
+				},],
 				tonggao:[{
 					content:'道生合服将于11月30日，到访我院',
 					date:'刚刚'
@@ -223,10 +284,18 @@
 		.s-index-navs {
 			height: 1.7rem;
 			width: 100%;
-			background: #226fda;
+			margin: 0 auto;
+			background: -webkit-linear-gradient(top, #297ae8,#4984e5);
+			ul{
+				display: flex;
+				justify-content: center;
+				width: 7.02rem;
+				margin: 0 auto;
+			}
 			li {
-				float: left;
-				width: 20%;
+				flex: 1;
+				// float: left;
+				// width: 25%;
 				height: 1.2rem;
 				/*padding: .2rem .5rem;*/
 				text-align: center;
@@ -235,12 +304,12 @@
 				position: relative;
 				i {
 					height: .45rem;
-					width: 1.49rem;
+					// width: 1.49rem;
 					display: block;
 					margin-bottom: .1rem;
 				}
 				i.s-index-bx {
-					background: url("../../../static/images/baoxiao.png") no-repeat center center;
+					background: url("../../../static/images/bx-white.png") no-repeat center center;
 					background-size: contain;
 				}
 				i.s-index-dc {
@@ -252,16 +321,25 @@
 					background-size: contain;
 				}
 				i.s-index-sw {
-					background: url("../../../static/images/shouwen.png") no-repeat center center;
+					background: url("../../../static/images/sw-white.png") no-repeat center center;
 					background-size: contain;
 				}
 				i.s-index-gd {
 					background: url("../../../static/images/more.png") no-repeat center center;
 					background-size: contain;
 				}
+				i.s-index-messageSearch {
+					background: url("../../../static/images/xxcx-white.png") no-repeat center center;
+					background-size: contain;
+				}
+				i.s-index-sendCon {
+					background: url("../../../static/images/fw-white.png") no-repeat center center;
+					background-size: contain;
+
+				}
 				p {
-					font-size: .24rem;
-					color: #bfcbda;
+					font-size: .28rem;
+					color: #fff;
 				}
 			}
 			li:after {
@@ -281,7 +359,7 @@
 		/*通告*/
 		.s-index-tg {
 			height: 1.7rem;
-			margin-top: -.5rem;
+			// margin-top: -.5rem;
 			padding: .35rem .15rem;
 			margin-bottom: .2rem;
 			box-shadow: 0 3px 5px #cbcbcb;
@@ -416,14 +494,16 @@
 							background: url('../../../static/images/daiban-i.png') no-repeat;
 							display: inline-block;
 							background-size: contain;
+							margin-right: .13rem;
 						}
 						span {
-							padding-left: .13rem;
+							// padding-left: .13rem;
 							font-size: .24rem;
 						}
 					}
 					div:last-child {
 						margin-top: -.1rem;
+						color: #30323a;
 					}
 				}
 				li:last-child {
@@ -495,9 +575,10 @@
 							background: url('../../../static/images/richeng-i.png') no-repeat;
 							display: inline-block;
 							background-size: contain;
+							margin-right: .13rem;
 						}
 						span {
-							padding-left: .13rem;
+							// padding-left: .13rem;
 							font-size: .24rem;
 						}
 					}
@@ -511,12 +592,65 @@
 			}
 		}
 	}
-
+	.s-index-all-navs{
+		// display: flex;
+		margin-bottom: .2rem !important;
+		box-shadow: 0 3px 5px #cbcbcb;
+		margin-top: -.4rem !important;
+		padding-bottom: .2rem;
+		// flex-wrap: wrap;
+		li{
+			// flex: 1;
+			float: left;
+			width: 25%;
+			text-align: center;
+			margin: .2rem 0 0rem 0;
+			font-size: .24rem;
+			i {
+				height: .45rem;
+				// width: 1.49rem;
+				display: block;
+				margin-bottom: .1rem;
+			}
+			i.s-index-meetingManage {
+				background: url("../../../static/images/icon13.png") no-repeat center center;
+				background-size: contain;
+			}
+			i.s-index-shareResource {
+				background: url("../../../static/images/icon14.png") no-repeat center center;
+				background-size: contain;
+			}
+			i.s-index-sendContent {
+				background: url("../../../static/images/icon15.png") no-repeat center center;
+				background-size: contain;
+			}
+			i.s-index-noticeManage {
+				background: url("../../../static/images/icon16.png") no-repeat center center;
+				background-size: contain;
+			}
+			i.s-index-myInform {
+				background: url("../../../static/images/icon20.png") no-repeat center center;
+				background-size: contain;
+			}
+			i.s-index-mySalary {
+				background: url("../../../static/images/icon21.png") no-repeat center center;
+				background-size: contain;
+			}
+			i.s-index-myleave {
+				background: url("../../../static/images/icon22.png") no-repeat center center;
+				background-size: contain;
+			}
+			i.s-index-more {
+				background: url("../../../static/images/index-all-more.png") no-repeat center center;
+				background-size: contain;
+			}
+		}
+	}
 	.content-wrap {
 		width: 7.02rem;
 		margin: 0 auto;
 		background: #fff;
-		border-radius: .05rem;
+		border-radius: .1rem;
 	}
 	.isShow {
 		display: none !important;
