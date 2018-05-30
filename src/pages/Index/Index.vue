@@ -2,7 +2,7 @@
 	<div class="index">
 		<div class="s-index-header">
 			<img src="../../../static/images/logo.png" />
-			<h3>中科院ARP系统</h3>
+			<!-- <h3>中科院ARP系统</h3> -->
 		</div>
 		<m-contain class="s-index-contain">
 			<!--轮播图-->
