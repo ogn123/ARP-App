@@ -1,4 +1,4 @@
-# doubanApp
+# App
 用 vue2.0 实现中科软ARP移动端
 
 ## Build Setup
